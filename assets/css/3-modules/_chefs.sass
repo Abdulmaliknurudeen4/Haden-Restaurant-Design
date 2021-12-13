@@ -1,0 +1,95 @@
+section.section-chefs
+  height: 900px
+  background: white
+  @media screen and (max-width:600px)
+    height: auto
+    padding-bottom: 50px
+  .wrapper
+    .card-container
+      position: relative
+      margin-top: 50px
+      position: relative
+      display: grid
+      grid-template-columns: repeat(4, auto)
+
+      .card
+        position: absolute
+        background: #fff
+        width: 350px
+        height: 600px
+        border-radius: 30px
+        transition: 0.4s, 0s
+        transition-delay: 0s, 0.4s
+        transition-property: transform, z-index
+        transform: translate(0,0)
+        @extend %flex
+        +flex-direction(column)
+        +justify-content(center)
+        +align-items(center)
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5)
+        @for $i from 1 through 4
+          &:nth-child(n+#{$i})
+            transform: translate(#{$i * -100}px,0px)
+            z-index: #{($i + 1)}
+            top: 50%
+            left: 50%
+            &:hover
+              transform: translate(#{($i * -100) +50}px,0px)
+              z-index: 100
+
+        .imageContainer
+          img
+              width: 300px
+              height: 300px
+              border-radius: 20px
+              object-fit: cover
+        .dataContainer
+          width: 300px
+          color: #000
+          @extend %flex
+          +align-items(flex-start)
+          +flex-direction(column)
+          text-transform: uppercase
+          @extend %monserrat
+          h2
+            font-weight: 400
+          h3
+            font-weight: 400
+            span
+              @extend %monserrat-thin
+              font-size: 24px
+          .socialContainer
+            a
+              display: inline-block
+              +pathColour($brand-blue)
+              margin: 0 10px
+              svg
+                +size(50px)
+      @media screen and (max-width:876px)
+        .card
+          @for $i from 1 through 4
+            &:nth-child(n+#{$i})
+              transform: translate(#{$i * -80}px,0px)
+              z-index: #{($i + 1)}
+              top: 30%
+              left: 30%
+              &:hover
+                transform: translate(#{($i * -80) +25}px,0px)
+                z-index: 100
+      @media screen and (max-width:600px)
+        display: grid
+        grid-template-columns: repeat(1, auto)
+        max-width: 90%
+        .card
+          position: relative
+          background: #fff
+          margin: 0 auto
+          margin-top: 10px
+          transition: none
+          @for $i from 1 through 4
+            &:nth-child(n+#{$i})
+              transform: none
+              top: 0%
+              left: 0%
+              &:hover
+                transform: none

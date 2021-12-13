@@ -1,0 +1,43 @@
+<section class="section-cuisines">
+<div class="wrapper">
+      <div class="title-block">
+        <h1 id="cuisines">Cuisines</h1>
+        <hr class="bar">
+      </div>
+
+  <div class="card-container">
+{% for item in site.data.restaurant.cuisinesList %}
+    <div class="card">
+      <div class="imageContainer">
+        <picture>
+          <source media="(min-width: {{site.data.restaurant.device-breakpoint}})" srcset="assets/img/{{item.image}}.jpg">
+          <source media="(max-width: {{site.data.restaurant.device-breakpoint}})" srcset="assets/img/device/{{item.image}}Small.jpg">
+          <img src="assets/img/tomatoesDish.jpg" alt="Missing Image">
+        </picture>
+      </div>
+
+      <div class="dataContainer">
+
+        <h2>{{item.name}}</h2>
+        <h3>Price: <span>${{item.price}}</span></h3>
+
+        <div class="ratingContainer">
+          {% for i in  (1..{{item.stars}}) %}
+          <span>{% include icons/50px/icons-star.html %}</span>
+          {% endfor %}
+        </div>
+
+        <div class="loveContainer">
+          <span>{% include icons/50px/icons-heart.html %}</span>
+          <b>{{item.love}}k</b>
+        </div>
+
+      </div>
+
+    </div>
+{% endfor %}
+
+  </div>
+</div>
+
+</section>

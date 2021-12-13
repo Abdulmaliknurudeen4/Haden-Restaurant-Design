@@ -1,0 +1,23 @@
+<section class="section-findUs">
+  <div class="wrapper">
+          <div class="title-block">
+            <h1 id="maps">Find Us</h1>
+            <hr class="bar">
+            <span>{% include icons/25px/icons-location.html %}</span>
+          </div>
+
+          <div class="location-container">
+          {% for item in site.data.restaurant.locationList %}
+            <div class="location">
+              <div class="image-hover">
+                <img src="assets/img/{{item.image}}.jpg" alt="Restaurant Picture">
+                <span>{% include icons/25px/icons-location.html %}</span>
+              </div>
+              <h2>{{item.city}}</h2>
+              <h3>{{item.street}}</h3>
+            </div>
+          {% endfor %}
+          </div>
+
+  </div>
+</section>

@@ -1,0 +1,46 @@
+section.section-ratings
+  height: 900px
+  background: #fff
+  @media screen and (max-width: 822px)
+    height: auto
+    padding-bottom: 50px
+  .wrapper
+    .rating-container
+      @extend %flex
+      +justify-content(center)
+      +align-items(center)
+      +flex-wrap(wrap)
+
+      .ratings
+        @extend %flex
+        +justify-content(center)
+        +align-items(center)
+        +flex-direction(column)
+        +size(350px)
+        @extend %monserrat
+        @extend %textwhite
+        margin: 10px
+
+        h2
+          font-weight: 400
+          font-size: 30px
+          margin-top: 0px
+          text-transform: uppercase
+        .rating-kit
+          span.rating-item
+            display: inline-block
+            svg
+              +size(75px)
+            &.on
+              +pathColour($brand-yellow)
+              filter: drop-shadow(2px 2px 6px $brand-yellow)
+            &.off
+              +pathColour(rgba(0,0,0,0.5))
+              filter: drop-shadow(2px 2px 6px rgba(0,0,0,1))
+        a
+          display: block
+          margin: 50px 10px 0 0
+          @extend %textwhite
+          @extend %monserrat-medium
+          font-size: 16px
+          +align-self(flex-end)

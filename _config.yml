@@ -1,0 +1,12 @@
+# Build settings
+
+markdown: kramdown
+permalink: pretty
+port: 3090
+
+sass:
+  sass_dir: assets/css
+  style: :nested
+livereload: true
+#user variables
+WebTitle: Haden Restaurant

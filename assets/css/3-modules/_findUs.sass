@@ -1,0 +1,60 @@
+section.section-findUs
+  height: auto
+  background: #fff
+  padding-bottom: 50px
+  @extend %monserrat
+  .wrapper
+    .title-block
+      span
+        display: none
+        text-align: center
+        +pathColour($brand-yellow)
+        svg
+          +size(60px)
+    .location-container
+      display: grid
+      grid-template-columns: repeat(3, auto)
+      margin: 0 auto
+      @media screen and (max-width: 1120px)
+        grid-template-columns: repeat(2,auto)
+      @media screen and (max-width: 670px)
+        grid-template-columns: repeat(1, auto)
+        max-width: 450px
+        margin: 0 auto
+
+      .location
+        position: relative
+        +size(400px)
+        @extend %flex
+        +flex-direction(column)
+        +align-items(center)
+        +justify-content(center)
+        .image-hover
+          position: relative
+          img
+            border-radius: 50%
+            +size(200px)
+            object-fit: cover
+          span
+            position: absolute
+            top: 35%
+            left: 35%
+            display: none
+            +pathColour($brand-yellow)
+            filter: brightness(140%) drop-shadow(2px 2px 10px $brand-yellow)
+            svg
+              +size(60px)
+          &:hover
+            span
+              display: block
+            img
+              filter: brightness(30%)
+        h2
+          font-weight: 400
+          text-transform: uppercase
+          margin: 0
+          margin-top: 10px
+        h3
+          font-weight: 500
+          margin: 0
+          margin-top: 10px

@@ -1,0 +1,25 @@
+<section class="section-aboutUs">
+  <div class="wrapper">
+    <div class="title-block">
+      <h1 id="about">About Us</h1>
+      <hr class="bar">
+    </div>
+
+    {% for item in site.data.restaurant.PersonalityList %}
+    <article class="content">
+        <div class="imgContainer">
+          <picture>
+            <source media="(min-width: {{site.data.restaurant.device-breakpoint}})" srcset="assets/img/{{item.image}}.jpg">
+            <source media="(max-width: {{site.data.restaurant.device-breakpoint}})" srcset="assets/img/device/{{item.image}}Small.jpg">
+            <img src="assets/img/pepper.jpg" alt="Missing Image">
+          </picture>
+        </div>
+        <div class="textContainer">
+          <h1>{{item.number}}.<span>{{item.title}}</span></h1>
+            <p>{{item.quote}}</p>
+        </div>
+    </article>
+    {% endfor %}
+
+  </div>
+</section>
